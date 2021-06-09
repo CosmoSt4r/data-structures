@@ -80,12 +80,17 @@ T& DynamicArray<T>::pop() {
 }
 
 template <typename T>
-int DynamicArray<T>::find(const T& obj) {
+int DynamicArray<T>::find(const T& obj) const{
 	for (int i = 0; i < length; ++i) {
 		if (array[i] == obj)
 			return i;
 	}
 	return -1;
+}
+
+template <typename T>
+bool DynamicArray<T>::contains(const T& obj) const {
+	return find(obj) != -1;
 }
 
 template <typename T>

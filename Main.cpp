@@ -9,11 +9,8 @@ int main() {
 		arr.append(i);
 	}
 
-	arr.pop();
-	arr.removeAt(arr.size()-1);
-	arr.removeAt(0);
-	arr.remove(10);
-
+	std::cout << arr.contains(10) << arr.contains(9) << std::endl;
+	
 	for (int i = 0; i < arr.size(); ++i) {
 		std::cout << arr.get(i) << " ";
 	}

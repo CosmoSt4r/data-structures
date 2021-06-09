@@ -21,7 +21,8 @@ public:
 	void append(const T& obj);
 	T& pop();
 
-	int find(const T& obj);
+	int find(const T& obj) const;
+	bool contains(const T& obj) const;
 	T& removeAt(const int index);
 	bool remove(const T& obj);
 };
