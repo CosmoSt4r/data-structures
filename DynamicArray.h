@@ -30,6 +30,9 @@ public:
 	bool contains(const T& obj) const;
 	T& removeAt(const int index);
 	bool remove(const T& obj);
+
+	T* begin();
+	T* end();
 };
 
 #include "DynamicArray.inl"

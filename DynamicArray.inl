@@ -15,7 +15,7 @@ template <typename T>
 void DynamicArray<T>::quickSort(int low, int high) {
 
 	if (low < high) {
-		int pivot = array[high];
+		T pivot = array[high];
 		int i = (low - 1);
 
 		for (int j = low; j <= high - 1; j++)
@@ -28,10 +28,10 @@ void DynamicArray<T>::quickSort(int low, int high) {
 		}
 		swap(&array[i + 1], &array[high]);
 
-		pivot = (i + 1);
+		int pivot_index = (i + 1);
 
-		quickSort(low, pivot - 1);
-		quickSort(pivot + 1, high);
+		quickSort(low, pivot_index - 1);
+		quickSort(pivot_index + 1, high);
 	}
 }
 
@@ -170,5 +170,14 @@ bool DynamicArray<T>::remove(const T& obj) {
 	return false;
 }
 
-#endif
+template <typename T>
+T* DynamicArray<T>::begin() {
+	return &array[0];
+}
 
+template <typename T>
+T* DynamicArray<T>::end() {
+	return &array[length];
+}
+
+#endif
