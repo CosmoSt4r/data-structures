@@ -36,9 +36,12 @@ public:
 	T& getFirst() const;
 	T& getLast() const;
 
-	T& removeAt(const int index);
 	T& removeFirst();
 	T& removeLast();
+	T& removeAt(const int index);
+	bool remove(const T& obj);
+
+	int find(const T& obj) const;
 };
 
 

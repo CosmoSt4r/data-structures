@@ -101,29 +101,6 @@ T& DLinkedList<T>::getLast() const {
 }
 
 template <typename T>
-T& DLinkedList<T>::removeAt(int index) {
-	if (length == 0)
-		throw std::invalid_argument("List is empty");
-
-	Node* elem = head;
-
-	while (index > 0) {
-		elem = elem->next;
-		index--;
-	}
-
-	T data = elem->data;
-
-	elem->prev->next = elem->next;
-	elem->next->prev = elem->prev;
-
-	delete[] elem;
-	length--;
-
-	return data;
-}
-
-template <typename T>
 T& DLinkedList<T>::removeFirst() {
 	if (length == 0)
 		throw std::invalid_argument("List is empty");
@@ -151,6 +128,83 @@ T& DLinkedList<T>::removeLast() {
 	length--;
 	
 	return data;
+}
+
+template <typename T>
+T& DLinkedList<T>::removeAt(int index) {
+	if (length == 0)
+		throw std::invalid_argument("List is empty");
+
+	if (index == 0)
+		return removeFirst();
+	else if (index == length - 1)
+		return removeLast();
+
+	Node* elem;
+
+	if (index < length / 2) {
+		elem = head;
+
+		while (index > 0) {
+			elem = elem->next;
+			index--;
+		}
+	}
+	else {
+		elem = tail;
+
+		while ((length - 1) - index > 0) {
+			elem = elem->prev;
+			index++;
+		}
+	}
+
+	T data = elem->data;
+
+	elem->prev->next = elem->next;
+	elem->next->prev = elem->prev;
+
+	delete[] elem;
+	length--;
+
+	return data;
+}
+
+template <typename T>
+bool DLinkedList<T>::remove(const T& obj) {
+	if (length == 0)
+		throw std::invalid_argument("List is empty");
+
+	Node* elem = head;
+	int index = 0;
+
+	while (elem->data != obj) {
+		if (elem->next == nullptr)
+			return false;
+		elem = elem->next;
+		index++;
+	}
+
+	removeAt(index);
+	return true;
+}
+
+template <typename T>
+int DLinkedList<T>::find(const T& obj) const {
+	if (length == 0)
+		throw std::invalid_argument("List is empty");
+
+	Node* elem = head;
+	int index = 0;
+
+	while (elem->data != obj) {
+		if (elem->next == nullptr)
+			return -1;
+		elem = elem->next;
+		index++;
+	}
+
+	return index;
 }
 
 #endif
