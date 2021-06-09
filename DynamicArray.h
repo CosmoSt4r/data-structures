@@ -7,6 +7,10 @@ private:
 	T* array = new T[16];
 	int length;
 	int capacity;
+
+	void swap(T* left, T* right);
+	int partition(int low, int high);
+	void quickSort(int low, int high);
 public:
 	DynamicArray();
 	DynamicArray(const int new_capacity);
@@ -16,6 +20,8 @@ public:
 
 	T& get(const int index) const;
 	void set(const int index, const T& obj);
+	void sort(bool reversed = false);
+	void sortRange(int low, int high, bool reversed = false);
 	void clear();
 
 	void append(const T& obj);

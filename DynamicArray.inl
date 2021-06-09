@@ -5,6 +5,42 @@
 #include "DynamicArray.h"
 
 template <typename T>
+void DynamicArray<T>::swap(T* left, T* right) {
+	T temp = *left;
+	*left = *right;
+	*right = temp;
+}
+
+template <typename T>
+int DynamicArray<T>::partition(int low, int high)
+{
+	int pivot = array[high];
+	int i = (low - 1);
+
+	for (int j = low; j <= high - 1; j++)
+	{
+		if (array[j] < pivot)
+		{
+			i++;
+			swap(&array[i], &array[j]);
+		}
+	}
+	swap(&array[i + 1], &array[high]);
+	return (i + 1);
+}
+
+template <typename T>
+void DynamicArray<T>::quickSort(int low, int high) {
+
+	if (low < high) {
+		int pi = partition(low, high);
+
+		quickSort(low, pi - 1);
+		quickSort(pi + 1, high);
+	}
+}
+
+template <typename T>
 DynamicArray<T>::DynamicArray() {
 	length = 0;
 	capacity = 16;
@@ -45,6 +81,28 @@ void DynamicArray<T>::set(const int index, const T& obj) {
 		throw std::invalid_argument("Index is out of range");
 	}
 	array[index] = obj;
+}
+
+template <typename T>
+void DynamicArray<T>::sort(bool reversed) {
+	if (reversed)
+		quickSort(length - 1, 0);
+	else
+		quickSort(0, length - 1);
+}
+
+template <typename T>
+void DynamicArray<T>::sortRange(int low, int high, bool reversed) {
+
+	if (low < 0 || low >= length)
+		throw std::invalid_argument("Low index is out of range");
+	if (high < 0 || high >= length)
+		throw std::invalid_argument("High index is out of range");
+
+	if (reversed)
+		quickSort(high, low);
+	else
+		quickSort(low, high);
 }
 
 template <typename T>
@@ -118,3 +176,4 @@ bool DynamicArray<T>::remove(const T& obj) {
 }
 
 #endif
+
