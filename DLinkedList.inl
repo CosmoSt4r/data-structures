@@ -207,4 +207,19 @@ int DLinkedList<T>::find(const T& obj) const {
 	return index;
 }
 
+template <typename T>
+bool DLinkedList<T>::contains(const T& obj) const {
+	return find(obj) != -1;
+}
+
+template <typename T>
+T* DLinkedList<T>::begin() {
+	return &(head->data);
+}
+
+template <typename T>
+T* DLinkedList<T>::end() {
+	return &(tail->data);
+}
+
 #endif
