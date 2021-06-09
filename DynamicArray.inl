@@ -12,31 +12,26 @@ void DynamicArray<T>::swap(T* left, T* right) {
 }
 
 template <typename T>
-int DynamicArray<T>::partition(int low, int high)
-{
-	int pivot = array[high];
-	int i = (low - 1);
-
-	for (int j = low; j <= high - 1; j++)
-	{
-		if (array[j] < pivot)
-		{
-			i++;
-			swap(&array[i], &array[j]);
-		}
-	}
-	swap(&array[i + 1], &array[high]);
-	return (i + 1);
-}
-
-template <typename T>
 void DynamicArray<T>::quickSort(int low, int high) {
 
 	if (low < high) {
-		int pi = partition(low, high);
+		int pivot = array[high];
+		int i = (low - 1);
 
-		quickSort(low, pi - 1);
-		quickSort(pi + 1, high);
+		for (int j = low; j <= high - 1; j++)
+		{
+			if (array[j] < pivot)
+			{
+				i++;
+				swap(&array[i], &array[j]);
+			}
+		}
+		swap(&array[i + 1], &array[high]);
+
+		pivot = (i + 1);
+
+		quickSort(low, pivot - 1);
+		quickSort(pivot + 1, high);
 	}
 }
 

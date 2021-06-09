@@ -9,7 +9,6 @@ private:
 	int capacity;
 
 	void swap(T* left, T* right);
-	int partition(int low, int high);
 	void quickSort(int low, int high);
 public:
 	DynamicArray();
