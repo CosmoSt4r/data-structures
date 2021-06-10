@@ -20,7 +20,7 @@ void DLinkedList<T>::clear() {
 
 	while (head != nullptr) {
 		next = head->next;
-		delete[] head;
+		delete head;
 		head = next;
 	}
 
@@ -108,7 +108,7 @@ T& DLinkedList<T>::removeFirst() {
 	T data = head->data;
 
 	Node* new_head = head->next;
-	delete[] head;
+	delete head;
 	head = new_head;
 	length--;
 
@@ -123,7 +123,7 @@ T& DLinkedList<T>::removeLast() {
 	T data = tail->data;
 
 	Node* new_tail = tail->prev;
-	delete[] tail;
+	delete tail;
 	tail = new_tail;
 	length--;
 	
@@ -164,7 +164,7 @@ T& DLinkedList<T>::removeAt(int index) {
 	elem->prev->next = elem->next;
 	elem->next->prev = elem->prev;
 
-	delete[] elem;
+	delete elem;
 	length--;
 
 	return data;
@@ -210,16 +210,6 @@ int DLinkedList<T>::find(const T& obj) const {
 template <typename T>
 bool DLinkedList<T>::contains(const T& obj) const {
 	return find(obj) != -1;
-}
-
-template <typename T>
-T* DLinkedList<T>::begin() {
-	return &(head->data);
-}
-
-template <typename T>
-T* DLinkedList<T>::end() {
-	return &(tail->data);
 }
 
 #endif

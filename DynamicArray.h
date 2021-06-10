@@ -4,7 +4,7 @@ template <typename T>
 class DynamicArray
 {
 private:
-	T* array = new T[16];
+	T* array;
 	int length;
 	int capacity;
 

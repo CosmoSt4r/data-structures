@@ -37,6 +37,7 @@ void DynamicArray<T>::quickSort(int low, int high) {
 
 template <typename T>
 DynamicArray<T>::DynamicArray() {
+	array = new T[16];
 	length = 0;
 	capacity = 16;
 }
@@ -47,7 +48,6 @@ DynamicArray<T>::DynamicArray(const int new_capacity) {
 		throw std::invalid_argument("Capacity can't be less than zero");
 	}
 	capacity = new_capacity;
-	delete[] array;
 	array = new T[capacity];
 	length = 0;
 }

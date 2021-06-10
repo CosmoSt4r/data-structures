@@ -43,9 +43,6 @@ public:
 
 	int find(const T& obj) const;
 	bool contains(const T& obj) const;
-
-	T* begin();
-	T* end();
 };
 
 
