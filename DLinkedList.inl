@@ -5,6 +5,8 @@
 
 template <typename T>
 DLinkedList<T>::DLinkedList() {
+	// Default constructor
+
 	head = nullptr;
 	tail = nullptr;
 	length = 0;
@@ -12,6 +14,8 @@ DLinkedList<T>::DLinkedList() {
 
 template <typename T>
 void DLinkedList<T>::clear() {
+	// Remove all elements from list
+
 	if (length == 0)
 		return;
 
@@ -29,16 +33,22 @@ void DLinkedList<T>::clear() {
 
 template <typename T>
 int DLinkedList<T>::size() const{
+	// Get size of list
+
 	return length;
 }
 
 template <typename T>
 bool DLinkedList<T>::isEmpty() const {
+	// Check if list is empty
+
 	return length == 0;
 }
 
 template <typename T>
 void DLinkedList<T>::addFirst(const T& obj) {
+	// Add element to the head of the list
+
 	if (length == 0) {
 		head = new Node(obj, nullptr, nullptr);
 		tail = head;
@@ -52,6 +62,8 @@ void DLinkedList<T>::addFirst(const T& obj) {
 
 template <typename T>
 void DLinkedList<T>::addLast(const T& obj) {
+	// Add element to the back of the list
+
 	if (length == 0) {
 		head = new Node(obj, nullptr, nullptr);
 		tail = head;
@@ -65,6 +77,8 @@ void DLinkedList<T>::addLast(const T& obj) {
 
 template <typename T>
 void DLinkedList<T>::addTo(int index, const T& obj) {
+	// Add element to specified position of the list
+
 	if (index >= length)
 		throw std::invalid_argument("Index is out of range");
 
@@ -81,6 +95,8 @@ void DLinkedList<T>::addTo(int index, const T& obj) {
 
 template <typename T>
 T& DLinkedList<T>::get(int index) const {
+	// Get element by index
+
 	Node* elem = head;
 	while (index > 0) {
 		elem = elem->next;
@@ -91,16 +107,22 @@ T& DLinkedList<T>::get(int index) const {
 
 template <typename T>
 T& DLinkedList<T>::getFirst() const {
+	// Get first element of the list
+
 	return head->data;
 }
 
 template <typename T>
 T& DLinkedList<T>::getLast() const {
+	// Get last element of the list
+
 	return tail->data;
 }
 
 template <typename T>
 T& DLinkedList<T>::removeFirst() {
+	// Remove first element of the list
+
 	if (length == 0)
 		throw std::invalid_argument("List is empty");
 
@@ -116,6 +138,8 @@ T& DLinkedList<T>::removeFirst() {
 
 template <typename T>
 T& DLinkedList<T>::removeLast() {
+	// Remove last element of the list
+
 	if (length == 0)
 		throw std::invalid_argument("List is empty");
 
@@ -131,6 +155,8 @@ T& DLinkedList<T>::removeLast() {
 
 template <typename T>
 T& DLinkedList<T>::removeAt(int index) {
+	// Remove element at specified index
+
 	if (length == 0)
 		throw std::invalid_argument("List is empty");
 
@@ -171,6 +197,8 @@ T& DLinkedList<T>::removeAt(int index) {
 
 template <typename T>
 bool DLinkedList<T>::remove(const T& obj) {
+	// Remove specified element from the list
+
 	if (length == 0)
 		throw std::invalid_argument("List is empty");
 
@@ -190,6 +218,8 @@ bool DLinkedList<T>::remove(const T& obj) {
 
 template <typename T>
 int DLinkedList<T>::find(const T& obj) const {
+	// Get index of specified element
+
 	if (length == 0)
 		throw std::invalid_argument("List is empty");
 
@@ -208,6 +238,8 @@ int DLinkedList<T>::find(const T& obj) const {
 
 template <typename T>
 bool DLinkedList<T>::contains(const T& obj) const {
+	// Check if element is in list
+
 	return find(obj) != -1;
 }
 
