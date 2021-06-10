@@ -1,8 +1,8 @@
 #ifndef DARRAY_INL
 #define DARRAY_INL
 
-#include <stdexcept>
 #include "DynamicArray.h"
+#include <iostream>
 
 template <typename T>
 void DynamicArray<T>::swap(T* left, T* right) {
@@ -178,6 +178,19 @@ T* DynamicArray<T>::begin() {
 template <typename T>
 T* DynamicArray<T>::end() {
 	return &array[length];
+}
+
+template <typename T>
+std::ostream& operator<<(std::ostream& stream, const DynamicArray<T>& arr) {
+	if (arr.size() == 0)
+		return stream;
+
+	stream << "[";
+	for (int i = 0; i < arr.size() - 1; ++i) {
+		stream << arr.get(i) << ", ";
+	}
+	stream << arr.get(arr.size() - 1) << "]";
+	return stream;
 }
 
 #endif

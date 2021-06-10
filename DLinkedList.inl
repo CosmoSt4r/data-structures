@@ -1,7 +1,6 @@
 #ifndef DLINKEDLIST_INL
 #define DLINKEDLIST_INL
 
-#include <stdexcept>
 #include "DLinkedList.h"
 
 template <typename T>
