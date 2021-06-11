@@ -218,6 +218,8 @@ bool DLinkedList<T>::remove(const T& obj) {
 
 template <typename T>
 void DLinkedList<T>::invert() {
+	// Invert entire list
+
 	if (length == 0)
 		throw std::invalid_argument("List is empty");
 
