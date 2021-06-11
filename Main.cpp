@@ -1,13 +1,8 @@
-#include <iostream>
+﻿#include <iostream>
 #include "DynamicArray.h"
 #include "DLinkedList.h"
 #include "Stack.h"
 #include "Queue.h"
-
-template <typename T>
-void print(const T& data) {
-	std::cout << data << std::endl;
-}
 
 int main() {
 

@@ -217,6 +217,26 @@ bool DLinkedList<T>::remove(const T& obj) {
 }
 
 template <typename T>
+void DLinkedList<T>::invert() {
+	if (length == 0)
+		throw std::invalid_argument("List is empty");
+
+	Node* ptr = tail;
+	Node* temp;
+
+	while (ptr->prev != nullptr) {
+		temp = ptr->prev;
+		ptr->prev = ptr->next;
+		ptr->next = temp;
+		ptr = ptr->next;
+	}
+
+	temp = head;
+	head = tail;
+	tail = temp;
+}
+
+template <typename T>
 int DLinkedList<T>::find(const T& obj) const {
 	// Get index of specified element
 

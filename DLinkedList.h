@@ -42,7 +42,8 @@ public:
 	T& removeLast();
 	T& removeAt(const int index);
 	bool remove(const T& obj);
-
+	
+	void invert();
 	int find(const T& obj) const;
 	bool contains(const T& obj) const;
 };
