@@ -35,7 +35,7 @@ T& Queue<T>::peek() const {
 }
 
 template <typename T>
-T& Queue<T>::poll() {
+T& Queue<T>::pop() {
 	if (length == 0)
 		throw std::invalid_argument("Queue is empty");
 	T data = head->data;
@@ -50,7 +50,7 @@ T& Queue<T>::poll() {
 }
 
 template <typename T>
-void Queue<T>::offer(const T& data) {
+void Queue<T>::push(const T& data) {
 	Node* newTail = new Node(data, nullptr);
 
 	if (tail != nullptr)

@@ -29,8 +29,8 @@ public:
 	bool isEmpty() const;
 
 	T& peek() const;
-	T& poll();
-	void offer(const T& data);
+	T& pop();
+	void push(const T& data);
 };
 
 #include "Queue.inl"
