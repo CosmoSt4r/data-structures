@@ -1,15 +1,15 @@
 ﻿#include <iostream>
-#include "DynamicArray.h"
-#include "DLinkedList.h"
-#include "Stack.h"
-#include "Queue.h"
+#include "DataStructures/DynamicArray.h"
+#include "DataStructures/DLinkedList.h"
+#include "DataStructures/Stack.h"
+#include "DataStructures/Queue.h"
 
 int main() {
 
 	DynamicArray<int> darray;
 	DLinkedList<float> dllist;
 	Stack<double> stack;
-	Queue<char> queue;
+	Queue<int> queue;
 
 	return 0;
 }
