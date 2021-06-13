@@ -80,7 +80,7 @@ void Fraction::setDenominator(int denominator) {
 }
 
 std::ostream& operator<<(std::ostream& stream, const Fraction& fraction){
-    stream << fraction.getNumerator() << '/' << fraction.getDenominator();
+    stream << '(' << fraction.getNumerator() << '/' << fraction.getDenominator() << ')';
     return stream;
 };
 
