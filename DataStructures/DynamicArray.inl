@@ -47,13 +47,13 @@ DynamicArray<T>::DynamicArray() {
 }
 
 template <typename T>
-DynamicArray<T>::DynamicArray(const int new_capacity) {
+DynamicArray<T>::DynamicArray(const int capacity) {
 	// Constructor with specified capacity
 
-	if (new_capacity < 0) {
+	if (capacity < 0) {
 		throw std::invalid_argument("Capacity can't be less than zero");
 	}
-	capacity = new_capacity;
+	this->capacity = capacity;
 	array = new T[capacity];
 	length = 0;
 }
@@ -141,8 +141,10 @@ void DynamicArray<T>::append(const T& obj) {
 	// Add new element to the end of array
 
 	if (length+1 >= capacity) {
-		if (capacity == 0) capacity = 1;
-		else capacity = capacity << 1;
+		if (capacity == 0)
+			capacity = 1;
+		else
+			capacity = capacity << 1;
 
 		T* new_array = new T[capacity];
 		for (int i = 0; i < capacity; ++i) {

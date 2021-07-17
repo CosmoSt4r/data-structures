@@ -11,9 +11,9 @@ private:
 		T data;
 		Node* next;
 
-		Node(const T& _data, Node* _next) {
-			data = _data;
-			next = _next;
+		Node(const T& data, Node* next) {
+			this->data = data;
+			this->next = next;
 		}
 	};
 

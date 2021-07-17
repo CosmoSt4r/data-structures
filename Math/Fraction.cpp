@@ -42,40 +42,40 @@ void Fraction::normalize(int& numerator, int& denominator) {
 }
 
 Fraction::Fraction() {
-    numerator_ = 0;
-    denominator_ = 1;
+    this->numerator = 0;
+    this->denominator = 1;
 }
 
 Fraction::Fraction(int numerator, int denominator) {
     normalize(numerator, denominator);
 
-    numerator_ = numerator;
-    denominator_ = denominator;
+    this->numerator = numerator;
+    this->denominator = denominator;
 }
 
 int Fraction::getNumerator() const {
-    return numerator_;
+    return numerator;
 }
 
 int Fraction::getDenominator() const {
-    return denominator_;
+    return denominator;
 }
 
 float Fraction::getValue() const {
-    return (float)numerator_ / denominator_;
+    return static_cast<float>(numerator) / denominator;
 }
 
 void Fraction::setNumerator(int numerator) {
-    if (numerator != numerator_) {
-        normalize(numerator, denominator_);
-        numerator_ = numerator;
+    if (numerator != this->numerator) {
+        normalize(numerator, denominator);
+        this->numerator = numerator;
     }
 }
 
 void Fraction::setDenominator(int denominator) {
-    if (denominator != denominator_) {
-        normalize(numerator_, denominator);
-        denominator_ = denominator;
+    if (denominator != this->denominator) {
+        normalize(this->numerator, denominator);
+        this->denominator = denominator;
     }
 }
 

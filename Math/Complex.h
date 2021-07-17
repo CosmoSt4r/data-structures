@@ -7,7 +7,7 @@ template <typename T>
 class Complex
 {
 private:
-	T imaginary_, real_;
+	T imaginary, real;
 public:
 	Complex();
 	Complex(const T& real, const T& imaginary);

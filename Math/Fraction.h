@@ -7,7 +7,7 @@ class Fraction
 {
 private:
 	void normalize(int& numerator, int& denominator);
-	int numerator_, denominator_;
+	int numerator, denominator;
 public:
 	Fraction();
 	Fraction(int numerator, int denominator);

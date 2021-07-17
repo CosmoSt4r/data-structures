@@ -5,49 +5,49 @@
 
 template <typename T>
 Complex<T>::Complex() {
-	real_ = 0;
-	imaginary_ = 0;
+	this->real = 0;
+	this->imaginary = 0;
 };
 
 template <typename T>
 Complex<T>::Complex(const T& real, const T& imaginary) {
-	real_ = real;
-	imaginary_ = imaginary;
+	this->real = real;
+	this->imaginary = imaginary;
 };
 
 template <typename T>
 T Complex<T>::getReal() const {
-	return real_;
+	return real;
 };
 
 template <typename T>
 T Complex<T>::getImaginary() const {
-	return imaginary_;
+	return imaginary;
 };
 
 template <typename T>
 T Complex<T>::getAbsolute() const {
-	return sqrt(pow(real_, 2) + pow(imaginary_, 2));
+	return sqrt(pow(real, 2) + pow(imaginary, 2));
 };
 
 template <typename T>
 T Complex<T>::getArgument() const {
-	return atan2(imaginary_, real_);
+	return atan2(imaginary, real);
 };
 
 template <typename T>
 Complex<T> Complex<T>::getConjugate() const {
-	return Complex<T>(real_, -imaginary_);
+	return Complex<T>(real, -imaginary);
 };
 
 template <typename T>
 void Complex<T>::setReal(const T& real) {
-	real_ = real;
+	this->real = real;
 };
 
 template <typename T>
 void Complex<T>::setImaginary(const T& imaginary) {
-	imaginary_ = imaginary;
+	this->imaginary = imaginary;
 };
 
 template <typename T>

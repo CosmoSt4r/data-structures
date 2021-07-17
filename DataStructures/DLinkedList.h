@@ -12,10 +12,10 @@ private:
 		Node* next;
 		Node* prev;
 
-		Node(T _data, Node* _prev, Node* _next) {
-			data = _data;
-			prev = _prev;
-			next = _next;
+		Node(T data, Node* prev, Node* next) {
+			this->data = data;
+			this->prev = prev;
+			this->next = next;
 		}
 	};
 
