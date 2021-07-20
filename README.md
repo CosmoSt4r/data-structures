@@ -126,7 +126,7 @@ My implementation of most popular data structures on C++ language
   Complex<float> secondComplex(1, -2);
 ```
 
-**Template:** true
+**Template:** true <br>
 This structure has following overloaded operators: +, -, /, *, <<, >>
 
 | Method         | Takes           | Returns    | Description |
@@ -148,7 +148,7 @@ This structure has following overloaded operators: +, -, /, *, <<, >>
   Fraction secondFraction(5, 10);
 ```
 
-**Template:** false (works only with integer values)
+**Template:** false (works only with integer values) <br>
 This structure has following overloaded operators: +, -, /, *, <<, >>
 
 | Method           | Takes        | Returns    | Description |
