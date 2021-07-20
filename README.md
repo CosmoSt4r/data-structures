@@ -118,3 +118,24 @@ My implementation of most popular data structures on C++ language
 | `peek`         | `void`          | `object`   | Get last item |
 | `pop`          | `void`          | `object`   | Remove last item |
 | `push`         | `object`        | `void`     | Add new item to the end |
+
+### Complex
+
+```cpp
+  Complex<int> firstComplex;
+  Complex<float> secondComplex(1, -2);
+```
+
+**Template:** true
+
+| Method         | Takes           | Returns    | Description |
+| :------------  | :-------------- | :--------- | :---------- |
+| `Complex`      | `void`          | `instance` | Default constructor |
+| `Complex`      |`object`, `object`|`instance` |Constructor with initial real and imaginary parts|
+| `getReal`      | `void`          | `object`   | Get real part |
+| `getImaginary` | `void`          | `object`   | Get imaginary part |
+| `getAbsolute`  | `void`          | `object`   | Get absolute value |
+| `getArgument`  | `void`          | `object`   | Get argument value |
+| `getConjugate` | `void`          | `Complex`  | Get conjugate complex number |
+| `setReal`      | `object`        | `void`     | Set new real part |
+| `setImaginary` | `object`        | `void`     | Set new imaginary part |
