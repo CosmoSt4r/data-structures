@@ -4,7 +4,6 @@
 My implementation of most popular data structures on C++ language
 
 
-
 ## Implemented structures
 
 ### Data structures
@@ -25,13 +24,13 @@ My implementation of most popular data structures on C++ language
 ```cpp
   DLinkedList<int> firstList;
   DLinkedList<float> secondList;
-  DLinkedList<DlinkedList<double>> thirdList;
+  DLinkedList<DLinkedList<double>> thirdList;
 ```
 
 **Template:** true
 
 | Method        | Takes           | Returns    | Description |
-| :------------ | :-------------- | :--------- | :----------------- |
+| :------------ | :-------------- | :--------- | :---------- |
 | `DLinkedList` | `void`          | `instance` | Default constructor |
 | `clear`       | `void`          | `void`     | Remove all elements |
 | `size`        | `void `         | `int`      | Get size of the list |
@@ -49,3 +48,32 @@ My implementation of most popular data structures on C++ language
 | `invert`      | `void`          | `void`     | Invert list |
 | `find`        | `object`        | `int`      | Find specified item |
 | `contains`    | `object`        | `bool`     | If list contains specified item returns *true* |
+
+### Dynamic array
+
+```cpp
+  DynamicArray<int> firstArray;
+  DynamicArray<float> secondArray;
+  DynamicArray<DynamicArray<double>> thirdArray;
+```
+
+**Template:** true
+
+| Method         | Takes           | Returns    | Description |
+| :------------  | :-------------- | :--------- | :---------- |
+| `DynamicArray` | `void`          | `instance` | Default constructor |
+| `DynamicArray` | `int`           | `instance` | Constructor with specified initial capacity |
+| `DynamicArray` | `array`, `int`  | `instance` | Constructor from specified array |
+| `clear`        | `void`          | `void`     | Remove all elements |
+| `size`         | `void `         | `int`      | Get size of the array |
+| `isEmpty`      | `void`          | `bool`     | If array is empty returns *true* |
+| `get`          | `int`           | `object`   | Get *i*-th element |
+| `set`          | `int`, `object` | `void`     | Change *i*-th element |
+| `sort`         | `bool`          | `void`     | Sort the array (optional: reversed sort) |
+| `sortRange`    | `int`, `int`, `bool` | `void`| Sort specified range of the array |
+| `append`       | `object`        | `void`     | Add new item to the end |
+| `pop`          | `void`          | `object`   | Remove last item |
+| `remove`       | `object`        | `bool`     | Remove specified item (returns *true* if removed) |
+| `removeAt`     | `int`           | `object`   | Remove *i*-th element |
+| `find`         | `object`        | `int`      | Find specified item |
+| `contains`     | `object`        | `bool`     | If list contains specified item returns *true* |
