@@ -127,6 +127,7 @@ My implementation of most popular data structures on C++ language
 ```
 
 **Template:** true
+This structure has following overloaded operators: +, -, /, *, <<, >>
 
 | Method         | Takes           | Returns    | Description |
 | :------------  | :-------------- | :--------- | :---------- |
@@ -139,3 +140,23 @@ My implementation of most popular data structures on C++ language
 | `getConjugate` | `void`          | `Complex`  | Get conjugate complex number |
 | `setReal`      | `object`        | `void`     | Set new real part |
 | `setImaginary` | `object`        | `void`     | Set new imaginary part |
+
+### Fraction
+
+```cpp
+  Fraction firstFraction;
+  Fraction secondFraction(5, 10);
+```
+
+**Template:** false (works only with integer values)
+This structure has following overloaded operators: +, -, /, *, <<, >>
+
+| Method           | Takes        | Returns    | Description |
+| :------------    | :----------- | :--------- | :---------- |
+| `Fraction`       | `void`       | `instance` | Default constructor |
+| `Fraction`       | `int`, `int` | `instance` | Constructor with initial numerator and denominator |
+| `getNumerator`   | `void`       | `int`      | Get numerator value |
+| `getDenominator` | `void`       | `int`      | Get denominator value |
+| `getValue`       | `void`       | `float`    | Get fraction's value (numerator/denominator) |
+| `setNumerator`   | `int`        | `void`     | Set new numerator |
+| `setDenominator` | `int`        | `void`     | Set new denominator |
