@@ -93,7 +93,28 @@ My implementation of most popular data structures on C++ language
 | `Queue`        | `void`          | `instance` | Default constructor |
 | `Queue`        | `object`        | `instance` | Constructor with initial value |
 | `size`         | `void `         | `int`      | Get size of the queue |
-| `isEmpty`      | `void`          | `bool`     | If array is empty returns *true* |
+| `isEmpty`      | `void`          | `bool`     | If queue is empty returns *true* |
 | `peek`         | `void`          | `object`   | Get first item |
 | `pop`          | `void`          | `object`   | Remove first item |
+| `push`         | `object`        | `void`     | Add new item to the end |
+
+### Stack
+
+```cpp
+  Stack<int> firstStack;
+  Stack<float> secondStack(4.20);
+  Stack<Stack<double>> thirdStack;
+```
+
+**Template:** true
+
+| Method         | Takes           | Returns    | Description |
+| :------------  | :-------------- | :--------- | :---------- |
+| `Stack`        | `void`          | `instance` | Default constructor |
+| `Stack`        | `object`        | `instance` | Constructor with initial value |
+| `clear`        | `void`          | `void`     | Remove all items |
+| `size`         | `void `         | `int`      | Get size of the stack |
+| `isEmpty`      | `void`          | `bool`     | If stack is empty returns *true* |
+| `peek`         | `void`          | `object`   | Get last item |
+| `pop`          | `void`          | `object`   | Remove last item |
 | `push`         | `object`        | `void`     | Add new item to the end |
