@@ -18,6 +18,16 @@ Queue<T>::Queue(const T& firstElem) {
 }
 
 template <typename T>
+Queue<T>::~Queue() {
+	while (head != nullptr)
+	{
+		Node* tmp = head;
+		head = head->next;
+		delete tmp;
+	}
+}
+
+template <typename T>
 int Queue<T>::size() const{
 	return length;
 }

@@ -20,6 +20,18 @@ Stack<T>::Stack(const T& elem)
 }
 
 template <typename T>
+Stack<T>::~Stack() {
+	// Destructor
+
+	while (head != nullptr)
+	{
+		Node* tmp = head;
+		head = head->next;
+		delete head;
+	}
+}
+
+template <typename T>
 void Stack<T>::clear() {
 	// Clear stack
 

@@ -13,6 +13,18 @@ DLinkedList<T>::DLinkedList() {
 }
 
 template <typename T>
+DLinkedList<T>::~DLinkedList() {
+	// Destructor
+
+	while (head != nullptr)
+	{
+		Node* tmp = head;
+		head = head->next;
+		delete tmp;
+	}
+}
+
+template <typename T>
 void DLinkedList<T>::clear() {
 	// Remove all elements from list
 

@@ -24,6 +24,7 @@ private:
 public:
 	Queue();
 	Queue(const T& firstElem);
+	~Queue();
 
 	int size() const;
 	bool isEmpty() const;

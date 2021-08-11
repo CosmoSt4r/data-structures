@@ -17,6 +17,7 @@ public:
 	DynamicArray();
 	DynamicArray(const int new_capacity);
 	DynamicArray(T elements[], const int arr_size);
+	~DynamicArray();
 
 	int size() const;
 	bool isEmpty() const;

@@ -47,6 +47,13 @@ DynamicArray<T>::DynamicArray() {
 }
 
 template <typename T>
+DynamicArray<T>::~DynamicArray() {
+	// Destructor
+
+	delete [] array;
+}
+
+template <typename T>
 DynamicArray<T>::DynamicArray(const int capacity) {
 	// Constructor with specified capacity
 

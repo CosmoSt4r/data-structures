@@ -24,6 +24,7 @@ private:
 	Node* tail;
 public:
 	DLinkedList();
+	~DLinkedList();
 
 	void clear();
 

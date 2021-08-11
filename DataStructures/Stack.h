@@ -22,6 +22,7 @@ private:
 public:
 	Stack();
 	Stack(const T& elem);
+	~Stack();
 
 	void clear();
 
